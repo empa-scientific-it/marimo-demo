@@ -24,7 +24,7 @@ jobs:
 
       - name: Export notebook
         run: |
-          uv run marimo export html-wasm ./tutorial/basic_datatypes.py -o output --mode run
+          uv run marimo export html-wasm ./tutorial/basic_datatypes.py -o output --mode edit
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
