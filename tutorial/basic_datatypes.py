@@ -7,9 +7,10 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
-    from helpers import run_tests
-    import inspect
-    return mo, run_tests
+
+    # from helpers import run_tests
+    # import inspect
+    return mo
 
 
 @app.cell(hide_code=True)
@@ -195,7 +196,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Let's have a closer look at the difference between "standard" and floor division.""")
+    mo.md(
+        r"""Let's have a closer look at the difference between "standard" and floor division."""
+    )
     return
 
 
@@ -298,23 +301,23 @@ def solution_addition_multiplication(a: float, b: float, c: float) -> float:
     return
 
 
-@app.cell
-def _(mo):
-    button = mo.ui.run_button(label="Run tests")
-    button
-    return (button,)
+# @app.cell
+# def _(mo):
+#     button = mo.ui.run_button(label="Run tests")
+#     button
+#     return (button,)
 
 
-@app.cell
-def _(button, run_tests):
-    if button.value:
-        print(run_tests("basic_datatypes", "addition_multiplication"))
-    return
+# @app.cell
+# def _(button, run_tests):
+#     if button.value:
+#         print(run_tests("basic_datatypes", "addition_multiplication"))
+#     return
 
 
-@app.cell
-def _():
-    return
+# @app.cell
+# def _():
+#     return
 
 
 if __name__ == "__main__":
